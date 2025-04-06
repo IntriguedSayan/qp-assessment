@@ -19,7 +19,6 @@ model GrocceryItem{
   name       String
   price      Float
   stock      Int
-  orderItems OrderItem[]
 }
 
 model User{
@@ -43,7 +42,6 @@ model OrderItem{
   orderId    String
   grocceryId String
   order      Order @relation(fields: [orderId], references: [id])
-  groccery   GrocceryItem @relation(fields: [grocceryId], references: [id])
   quantity   Int
 }
 

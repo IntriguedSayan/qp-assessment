@@ -50,7 +50,7 @@ router.patch(
 
 router.delete(
   "/groceries/:id",
-  [param("id").isInt(), validateRequest],
+  [param("id").isString(), validateRequest],
   (req: Request, res: Response) => {
     adminController.removeGroccery(req, res);
   }
