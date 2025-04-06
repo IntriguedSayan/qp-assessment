@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model GrocceryItem{
+model grocceryItem {
   id         String @id @default(cuid())
   name       String
   price      Float
@@ -42,7 +42,7 @@ model OrderItem{
   orderId    String
   grocceryId String
   order      Order @relation(fields: [orderId], references: [id])
-  groccery   GrocceryItem @relation(fields: [grocceryId], references: [id])
+  groccery   grocceryItem @relation(fields: [grocceryId], references: [id])
   quantity   Int
 }
 
